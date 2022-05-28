@@ -1,4 +1,12 @@
 26/05/2022
 
 - use the same token for persistent sessions 
-- 
+-
+
+27/05/2022
+- candle data manage
+- testing startegies 
+
+- way to download all the data of one symbol and store it locally 
+- dashboard for full data of a stock 
+- way to download all data for nifty 50 stocks everyday end of day 

@@ -58,7 +58,7 @@ def main():
     private_token = special_cookie['enctoken']
 
     print(f'logged in private token is {private_token} ')
-
-""" data requests code for kite historical data api  """
+    with open('token.txt','w') as f:
+        f.write(private_token)
 
 main()
