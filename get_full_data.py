@@ -1,46 +1,40 @@
-from typing import final
-
-from numpy import full
 from get_data import get_data
 import datetime
 import pandas as pd
 from pprint import pprint
 
-'''gets ful data of the stock '''
+# get all dates with freq of 60 Days
+start_dates = pd.date_range(start='2005-02-01',end='2022-05-27',freq='60D')
 
-# print(today + tdela)
-
-start_dates = pd.date_range(start='2020-02-01',end='2022-05-27',freq='60D')
-
-# gets rid of the time in the date
+# remove time format and make it date only in str format
 start_dates_ = start_dates.date
-i = 0
-while i < len(start_dates_)-1:
-  data =get_data('1921537',start_dates_[i],start_dates_[i+1],'day')
-  data = data['data']
-  candles = data['candles']
-  pd_data = pd.DataFrame(candles, columns=['Date','Open','High','Low','Close','volume','None'])
-  print(pd_data)
-  i += 1
- 
 
-def missing_date():
+#global variables for functions
+symbol_id = '1921537'
+time_frame = 'day'
+
+# gets candles data and saves it to a csv
+def first_date_candles():
+  i = 0
+  while i < len(start_dates_)-1:
+    data =get_data(f'{symbol_id}',start_dates_[i],start_dates_[i+1],f'{time_frame}')
+    data = data['data']
+    candles = data['candles']
+    pd_data_1 = pd.DataFrame(candles)
+    pd_data_1.to_csv(f'./stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False, header=False)
+    i+=1
+ 
+# gets missing candles data and appends it to csv
+def missing_date_candles():
     new_list = []
     length = len(start_dates) 
     final_date = start_dates[length-1].strftime('%Y-%m-%d')
-    '''calculate number of missing dates till today '''
     today = str(datetime.date.today())
     data =get_data('1921537',final_date,today,'day')
     data = data['data']
     candles = data['candles']
-    pd_data = pd.DataFrame(candles, columns=['Date','Open','High','Low','Close','volume','None'])
-    print(pd_data)
+    pd_data_2 = pd.DataFrame(candles)
+    pd_data_2.to_csv(f'./stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False, header=False)
 
-
-# function to store data to a file
-def store_candle_data(data,filename):
-    with open(f'stocks_data/{filename}','w') as f:
-        f.write(data)
-
-missing_date()
-
+first_date_candles()
+missing_date_candles()
