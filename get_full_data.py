@@ -4,7 +4,7 @@ import pandas as pd
 from pprint import pprint
 
 # get all dates with freq of 60 Days
-start_dates = pd.date_range(start='2005-02-01',end='2022-05-27',freq='60D')
+start_dates = pd.date_range(start='2022-02-01',end='2022-05-27',freq='60D')
 
 # remove time format and make it date only in str format
 start_dates_ = start_dates.date
@@ -12,6 +12,11 @@ start_dates_ = start_dates.date
 #global variables for functions
 symbol_id = '1921537'
 time_frame = 'day'
+
+#assign coloums to the sheets
+column_name = pd.DataFrame(columns=['Date','Open','High','Low','Close','Volume','None'])
+column_name.to_csv(f'./stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False)
+
 
 # gets candles data and saves it to a csv
 def first_date_candles():

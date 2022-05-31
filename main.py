@@ -43,7 +43,7 @@ def main():
 
     'user_id': USER_NAME,
     'request_id': request_id,
-    'twofa_value': PIN_NUBMER,
+    'twofa_value': PIN_NUMBER,
     'skip_session': ''
 
     }

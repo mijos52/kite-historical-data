@@ -1,6 +1,7 @@
 import pandas as pd
 
 
+
 data = pd.read_csv('instruments.csv')
 
 data_clean = data.drop(['exchange_token', 'last_price','expiry','strike','tick_size','lot_size'], axis=1)
