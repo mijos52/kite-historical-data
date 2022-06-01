@@ -1,0 +1,3 @@
+#!c:\users\combuter\documents\projects\kite_historical_data\venv\scripts\python.exe
+from numba.pycc import main
+main()

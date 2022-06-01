@@ -2,13 +2,13 @@ import vectorbt as vbt
 import pandas as pd
 import numpy as np
 
-price = pd.read_csv('stocks_data/1921537_day.csv')  
+price = pd.read_csv('venv/stocks_data/1921537_day.csv')  
 price_close_numpy = price['Close'].to_numpy()
 price_close = price['Close']
-
+# print(price_close)
 
 pf = vbt.Portfolio.from_holding(price_close_numpy, init_cash=100)
-pf.total_profit()
+print(pf.total_profit())
 
 # # trade data
 
