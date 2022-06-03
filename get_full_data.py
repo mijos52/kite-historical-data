@@ -4,18 +4,18 @@ import pandas as pd
 from pprint import pprint
 
 # get all dates with freq of 60 Days
-start_dates = pd.date_range(start='2022-02-01',end='2022-05-27',freq='60D')
+start_dates = pd.date_range(start='2022-05-31',end='2022-06-01')
 
 # remove time format and make it date only in str format
 start_dates_ = start_dates.date
 
 #global variables for functions
 symbol_id = '1921537'
-time_frame = 'day'
+time_frame = 'minute'
 
 #assign coloums to the sheets
 column_name = pd.DataFrame(columns=['Date','Open','High','Low','Close','Volume','None'])
-column_name.to_csv(f'./stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False)
+column_name.to_csv(f'./venv/stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False)
 
 
 # gets candles data and saves it to a csv
@@ -26,7 +26,7 @@ def first_date_candles():
     data = data['data']
     candles = data['candles']
     pd_data_1 = pd.DataFrame(candles)
-    pd_data_1.to_csv(f'./stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False, header=False)
+    pd_data_1.to_csv(f'./venv/stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False, header=False)
     i+=1
  
 # gets missing candles data and appends it to csv
@@ -39,7 +39,7 @@ def missing_date_candles():
     data = data['data']
     candles = data['candles']
     pd_data_2 = pd.DataFrame(candles)
-    pd_data_2.to_csv(f'./stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False, header=False)
+    pd_data_2.to_csv(f'./venv/stocks_data/{symbol_id}_{time_frame}.csv', mode='a', index=False, header=False)
 
 first_date_candles()
 missing_date_candles()
