@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
-'''calls the api and also currenlty had streamlit'''
+'''calls the api and also currenlty has streamlit'''
 
 
 def get_data(symbol,from_date,to_date,time_frame):

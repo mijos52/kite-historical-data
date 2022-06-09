@@ -1,7 +1,7 @@
 import plotly.graph_objects as go
 import  pandas as pd
 
-df = pd.read_csv('./venv/stocks_data/1921537_day.csv')
+df = pd.read_csv('./venv/stocks_data/2815745_day.csv')
 
 
 df['Date'] = pd.to_datetime(df['Date'])
