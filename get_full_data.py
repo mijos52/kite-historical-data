@@ -51,7 +51,7 @@ def missing_date_candles():
 ''' code to remove the duplicate entries in the dataframe'''
 def remove_duplicates():
   price = pd.read_csv(f'venv/stocks_data/{symbol_id}_{time_frame}.csv')  
-  price.drop_duplicates(subset=['Date'])
+  price = price.drop_duplicates()
   file = f'venv/stocks_data/{symbol_id}_{time_frame}.csv'
   if(os.path.exists(file) and os.path.isfile(file)):
     os.remove(file)
