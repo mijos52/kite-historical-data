@@ -18,11 +18,12 @@ price_volume_numpy = price['Volume'].to_numpy()
 
 # trade data
 
+
 fast_ma = vbt.MA.run(price_close_numpy, 10)
 slow_ma = vbt.MA.run(price_close_numpy, 50)
 entries = fast_ma.ma_crossed_above(slow_ma)
 exits = fast_ma.ma_crossed_below(slow_ma)
 
+
 pf = vbt.Portfolio.from_signals(price_close_numpy, entries, exits, init_cash=100)
 print(pf.total_profit())
-v

@@ -10,7 +10,7 @@ start_dates = pd.date_range(start='2021-01-01',end='2022-06-01',freq='60D')
 start_dates_ = start_dates.date
 
 #global variables for functions
-symbol_id = '2815745'
+symbol_id = '256265'
 time_frame = 'day'
 
 file = f'venv/stocks_data/{symbol_id}_{time_frame}.csv'
