@@ -38,9 +38,18 @@ import pandas as pd
 import vectorbt as vbt
 
 
+
 # volume from pandas data
 stock_data = pd.read_csv('./venv/stocks_data/2815745_day.csv')
 stock_volume = stock_data['Volume']
+
+# 52 week high find (only gives correct one if its 52 week data)
+year_high = stock_data['High'].max()
+print(f'52_week high  is {year_high}')
+
+# 52 week low find (only gives correct one if its 52 week data)
+year_low = stock_data['Low'].min()
+print(f'52_week low  is {year_low}')
 
 
 # relative_volume calculation

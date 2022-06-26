@@ -4,7 +4,7 @@ import pandas as pd
 import os 
 
 # get all dates with freq of 60 Days
-start_dates = pd.date_range(start='2021-01-01',end='2022-06-01',freq='60D')
+start_dates = pd.date_range(start='2022-03-01',end='2022-06-18',freq='60D')
 
 # remove time format and make it date only in str format
 start_dates_ = start_dates.date
