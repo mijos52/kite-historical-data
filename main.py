@@ -1,5 +1,4 @@
 import requests
-from pprint import pprint
 from config import*
 
 """logs into kite zerodha using sessions from requests lib
@@ -31,11 +30,7 @@ def main():
     result  = session.post('https://kite.zerodha.com/api/login',headers=main_header,cookies=cookies,data=pay_load)
     result_json = result.json()
 
-    request_data = result_json['data']
-    request_id = request_data['request_id']
-    kf_session =result.cookies['kf_session']
-
-    enctoken = 'enctoken'+' '+request_id
+    request_id = result_json['data']['request_id']
 
     # two-factor authentication
     twofa_url = 'https://kite.zerodha.com/api/twofa'
@@ -54,7 +49,6 @@ def main():
 
     # values for all tokens
     
-    public_token =special_cookie['public_token']
     private_token = special_cookie['enctoken']
 
     print(f'logged in private token is {private_token} ')
