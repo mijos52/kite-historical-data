@@ -1,4 +1,4 @@
-from get_data import get_data
+from  get_candle_data import  get_data
 import datetime
 import pandas as pd
 import os 
