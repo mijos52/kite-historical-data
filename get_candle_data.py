@@ -29,10 +29,3 @@ def get_data(symbol:str, from_date:str, to_date:str ,time_frame:str) -> dict:
 
     response = requests.get(url = api_url, headers=headers, data=pay_load)
     return response.json()
-
-# symbol_id = '256265'
-# time_frame = 'day'
-# start='2022-03-01'
-# end='2022-06-18'
-
-# get_data(symbol=symbol_id, from_date=start, to_date=end, time_frame=time_frame)

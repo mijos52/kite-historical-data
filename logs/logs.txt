@@ -1,0 +1,12 @@
+
+INFO:root:programm started 
+INFO:root:list of dates
+INFO:root:Inside main function 
+INFO:root:first candle data 
+INFO:root:save data 
+INFO:root:missing date candles function  
+INFO:root:save data 
+INFO:root:remove duplicates function 
+INFO:root:delete files 
+INFO:root:save data 
+INFO:root:save data 
