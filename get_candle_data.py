@@ -19,7 +19,7 @@ headers ={
 def get_data(symbol:str, from_date:str, to_date:str ,time_frame:str) -> dict:
     pay_load = {
 
-    'user_id': 'AX2602',
+    'user_id': ' ',
     'oi': '1',
     'from': from_date,
     'to': to_date
